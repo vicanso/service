@@ -1,0 +1,19 @@
+{
+  "name": "service",
+  "description": "stats server",
+  "version": "0.0.1",
+  "main": "dest/index",
+  "dependencies": {
+    "jtcluster": "0.0.1",
+    "jthalog": "0.0.2",
+    "jtstats": "0.0.2",
+    "commander": "~2.2.0",
+    "jtsys": "0.0.1",
+    "jtstats_client": "0.0.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-coffee": "~0.10.1",
+    "grunt-contrib-jshint": "~0.9.2"
+  }
+}
