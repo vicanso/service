@@ -30,6 +30,10 @@ startSystemMonitor = ->
     prefix : "sys.#{os.hostname()}."
   }
   jtSys.setLogClient client
+  jtSys.filter 'network', (name) ->
+    name != 'em2'
+  jtSys.filter 'disk', (mount) ->
+    mount == '/'
   jtSys.start 10 * 1000
 
 startStats = ->
