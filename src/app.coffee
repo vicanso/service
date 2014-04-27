@@ -51,8 +51,8 @@ startStats = ->
 options = 
   slaveTotal : 1
   slaveHandler : ->
-    startHaproxyLog()
     startStats()
+    startHaproxyLog()
     startSystemMonitor()
 jtCluster = new JTCluster options
 jtCluster.on 'log', (data) ->

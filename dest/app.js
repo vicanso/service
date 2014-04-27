@@ -36,6 +36,12 @@
       prefix: "sys." + (os.hostname()) + "."
     });
     jtSys.setLogClient(client);
+    jtSys.filter('network', function(name) {
+      return name !== 'em2';
+    });
+    jtSys.filter('disk', function(mount) {
+      return mount === '/';
+    });
     return jtSys.start(10 * 1000);
   };
 
@@ -53,8 +59,8 @@
   options = {
     slaveTotal: 1,
     slaveHandler: function() {
-      startHaproxyLog();
       startStats();
+      startHaproxyLog();
       return startSystemMonitor();
     }
   };
