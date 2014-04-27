@@ -6,9 +6,9 @@
   "dependencies": {
     "jtcluster": "0.0.2",
     "jthalog": "0.0.3",
-    "jtstats": "0.0.2",
+    "jtstats": "0.0.3",
     "commander": "~2.2.0",
-    "jtsys": "0.0.2",
+    "jtsys": "0.0.3",
     "jtstats_client": "0.0.2"
   },
   "devDependencies": {
