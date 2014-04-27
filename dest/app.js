@@ -3,8 +3,6 @@
 
   JTCluster = require('jtcluster');
 
-  jtCluster = new JTCluster();
-
   JTStatsClient = require('jtstats_client');
 
   statsPort = '9300';
@@ -61,7 +59,7 @@
     }
   };
 
-  jtCluster.start(options);
+  jtCluster = new JTCluster(options);
 
   jtCluster.on('log', function(data) {
     return console.info(data);

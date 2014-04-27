@@ -1,5 +1,5 @@
 JTCluster = require 'jtcluster'
-jtCluster = new JTCluster()
+
 
 JTStatsClient = require 'jtstats_client'
 statsPort = '9300'
@@ -50,7 +50,6 @@ options =
     startHaproxyLog()
     startStats()
     startSystemMonitor()
-
-jtCluster.start options
+jtCluster = new JTCluster options
 jtCluster.on 'log', (data) ->
   console.info data
