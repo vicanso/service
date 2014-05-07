@@ -4,12 +4,12 @@
   "version": "0.0.1",
   "main": "dest/index",
   "dependencies": {
-    "jtcluster": "0.0.2",
-    "jthalog": "0.0.3",
-    "jtstats": "0.0.3",
+    "jtcluster": "0.0.4",
+    "jthalog": "0.0.4",
+    "jtstats": "0.0.5",
     "commander": "~2.2.0",
-    "jtsys": "0.0.3",
-    "jtstats_client": "0.0.2"
+    "jtsys": "0.0.5",
+    "jtstats_client": "0.0.3"
   },
   "devDependencies": {
     "grunt-contrib-clean": "^0.5.0",
