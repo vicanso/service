@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "main": "dest/index",
   "dependencies": {
-    "jtcluster": "0.0.4",
+    "jtcluster": "0.0.3",
     "jthalog": "0.0.4",
     "jtstats": "0.0.5",
     "commander": "~2.2.0",
