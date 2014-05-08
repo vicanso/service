@@ -34,6 +34,8 @@ startSystemMonitor = ->
     name != 'em2'
   jtSys.filter 'disk', (mount) ->
     mount == '/'
+  jtSys.filter 'io', (device) ->
+    device == 'sdb' || device == 'sda'
   jtSys.start 10 * 1000
 
 startStats = ->
