@@ -42,6 +42,9 @@
     jtSys.filter('disk', function(mount) {
       return mount === '/';
     });
+    jtSys.filter('io', function(device) {
+      return device === 'sdb' || device === 'sda';
+    });
     return jtSys.start(10 * 1000);
   };
 
