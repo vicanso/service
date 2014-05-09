@@ -56,6 +56,11 @@ options =
     startStats()
     startHaproxyLog()
     startSystemMonitor()
-jtCluster = new JTCluster options
-jtCluster.on 'log', (data) ->
-  console.info data
+run = ->
+  jtCluster = new JTCluster options
+  jtCluster.on 'log', (data) ->
+    console.info data
+if process.env.NODE_ENV == 'production'
+  setTimeout run, 60 * 1000
+else
+  run()

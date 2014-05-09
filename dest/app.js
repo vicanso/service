@@ -1,5 +1,5 @@
 (function() {
-  var JTCluster, JTStatsClient, config, jtCluster, options, startHaproxyLog, startStats, startSystemMonitor, statsHost, statsPort;
+  var JTCluster, JTStatsClient, config, options, run, startHaproxyLog, startStats, startSystemMonitor, statsHost, statsPort;
 
   JTCluster = require('jtcluster');
 
@@ -68,10 +68,18 @@
     }
   };
 
-  jtCluster = new JTCluster(options);
+  run = function() {
+    var jtCluster;
+    jtCluster = new JTCluster(options);
+    return jtCluster.on('log', function(data) {
+      return console.info(data);
+    });
+  };
 
-  jtCluster.on('log', function(data) {
-    return console.info(data);
-  });
+  if (process.env.NODE_ENV === 'production') {
+    setTimeout(run, 60 * 1000);
+  } else {
+    run();
+  }
 
 }).call(this);
