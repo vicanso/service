@@ -61,6 +61,6 @@ run = ->
   jtCluster.on 'log', (data) ->
     console.info data
 if process.env.NODE_ENV == 'production'
-  setTimeout run, 300 * 1000
+  setTimeout run, 60 * 1000
 else
   run()
