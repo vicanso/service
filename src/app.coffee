@@ -51,6 +51,7 @@ startStats = ->
 
 
 options = 
+  interval : 30 * 1000
   slaveTotal : 1
   slaveHandler : ->
     startStats()
