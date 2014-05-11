@@ -8,7 +8,7 @@
     "jthalog": "0.0.4",
     "jtstats": "0.0.7",
     "commander": "~2.2.0",
-    "jtsys": "0.1.0",
+    "jtsys": "0.1.1",
     "jtstats_client": "0.0.3"
   },
   "devDependencies": {
