@@ -1,4 +1,5 @@
 JTCluster = require 'jtcluster'
+cluster = require 'cluster'
 
 
 JTStatsClient = require 'jtstats_client'
@@ -61,7 +62,7 @@ run = ->
   jtCluster = new JTCluster options
   jtCluster.on 'log', (data) ->
     console.info data
-if process.env.NODE_ENV == 'production'
+if cluster.isMaster && process.env.NODE_ENV == 'production'
   setTimeout run, 60 * 1000
 else
   run()

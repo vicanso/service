@@ -1,7 +1,9 @@
 (function() {
-  var JTCluster, JTStatsClient, config, options, run, startHaproxyLog, startStats, startSystemMonitor, statsHost, statsPort;
+  var JTCluster, JTStatsClient, cluster, config, options, run, startHaproxyLog, startStats, startSystemMonitor, statsHost, statsPort;
 
   JTCluster = require('jtcluster');
+
+  cluster = require('cluster');
 
   JTStatsClient = require('jtstats_client');
 
@@ -60,6 +62,7 @@
   };
 
   options = {
+    interval: 30 * 1000,
     slaveTotal: 1,
     slaveHandler: function() {
       startStats();
@@ -76,7 +79,7 @@
     });
   };
 
-  if (process.env.NODE_ENV === 'production') {
+  if (cluster.isMaster && process.env.NODE_ENV === 'production') {
     setTimeout(run, 60 * 1000);
   } else {
     run();
