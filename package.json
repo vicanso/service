@@ -5,7 +5,7 @@
   "main": "dest/index",
   "dependencies": {
     "jtcluster": "0.0.3",
-    "jthalog": "0.0.6",
+    "jthalog": "0.0.7",
     "jtstats": "0.0.7",
     "commander": "~2.2.0",
     "jtsys": "0.1.1",
